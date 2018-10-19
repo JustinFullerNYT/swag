@@ -14,7 +14,11 @@
 //
 package swagger
 
-import "encoding/json"
+import (
+	"encoding/json"
+
+	"github.com/alecthomas/jsonschema"
+)
 
 // Items represents items from the swagger doc
 type Items struct {
@@ -25,10 +29,8 @@ type Items struct {
 
 // Schema represents a schema from the swagger doc
 type Schema struct {
-	Type      string      `json:"type,omitempty"`
-	Items     *Items      `json:"items,omitempty"`
-	Ref       string      `json:"$ref,omitempty"`
-	Prototype interface{} `json:"-"`
+	*jsonschema.Type
+	Definitions jsonschema.Definitions `json:"-"`
 }
 
 // Header represents a response header

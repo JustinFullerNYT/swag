@@ -23,6 +23,8 @@ import (
 	"reflect"
 	"strings"
 	"sync"
+
+	"github.com/alecthomas/jsonschema"
 )
 
 // Object represents the object entity from the swagger definition
@@ -231,7 +233,7 @@ type API struct {
 	BasePath            string                    `json:"basePath,omitempty"`
 	Schemes             []string                  `json:"schemes,omitempty"`
 	Paths               map[string]*Endpoints     `json:"paths,omitempty"`
-	Definitions         map[string]Object         `json:"definitions,omitempty"`
+	Definitions         jsonschema.Definitions    `json:"definitions,omitempty"`
 	Tags                []Tag                     `json:"tags"`
 	Host                string                    `json:"host"`
 	SecurityDefinitions map[string]SecurityScheme `json:"securityDefinitions,omitempty"`
@@ -290,14 +292,13 @@ func (a *API) addPath(e *Endpoint) {
 
 func (a *API) addDefinition(e *Endpoint) {
 	if a.Definitions == nil {
-		a.Definitions = map[string]Object{}
+		a.Definitions = jsonschema.Definitions{}
 	}
 
 	if e.Parameters != nil {
 		for _, p := range e.Parameters {
 			if p.Schema != nil {
-				def := define(p.Schema.Prototype)
-				for k, v := range def {
+				for k, v := range p.Schema.Definitions {
 					if _, ok := a.Definitions[k]; !ok {
 						a.Definitions[k] = v
 					}
@@ -309,8 +310,7 @@ func (a *API) addDefinition(e *Endpoint) {
 	if e.Responses != nil {
 		for _, response := range e.Responses {
 			if response.Schema != nil {
-				def := define(response.Schema.Prototype)
-				for k, v := range def {
+				for k, v := range response.Schema.Definitions {
 					if _, ok := a.Definitions[k]; !ok {
 						a.Definitions[k] = v
 					}

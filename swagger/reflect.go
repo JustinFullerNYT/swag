@@ -17,6 +17,8 @@ package swagger
 import (
 	"reflect"
 	"strings"
+
+	"github.com/alecthomas/jsonschema"
 )
 
 func inspect(t reflect.Type, jsonTag string) Property {
@@ -209,21 +211,12 @@ func define(v interface{}) map[string]Object {
 }
 
 // MakeSchema takes struct or pointer to a struct and returns a Schema instance suitable for use by the swagger doc
-func MakeSchema(prototype interface{}) *Schema {
-	schema := &Schema{
-		Prototype: prototype,
-	}
+func MakeSchema(t reflect.Type) *Schema {
+	js := jsonschema.ReflectFromType(t)
 
-	obj := defineObject(prototype)
-	if obj.IsArray {
-		schema.Type = "array"
-		schema.Items = &Items{
-			Ref: makeRef(obj.Name),
-		}
+	var s Schema
+	s.Type = js.Type
+	s.Definitions = js.Definitions
 
-	} else {
-		schema.Ref = makeRef(obj.Name)
-	}
-
-	return schema
+	return &s
 }
