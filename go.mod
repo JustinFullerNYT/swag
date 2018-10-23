@@ -7,4 +7,4 @@ require (
 	github.com/stretchr/testify v1.2.2
 )
 
-replace github.com/alecthomas/jsonschema => github.com/marwan-at-work/jsonschema v0.0.0-20181019144651-350f80d07689
+replace github.com/alecthomas/jsonschema => github.com/marwan-at-work/jsonschema v0.0.0-20181023194834-0680a0398165
