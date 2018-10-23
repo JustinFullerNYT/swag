@@ -19,8 +19,7 @@ import (
 	"net/http"
 	"testing"
 
-	"reflect"
-
+	"github.com/alecthomas/jsonschema"
 	"github.com/savaki/swag"
 	"github.com/savaki/swag/endpoint"
 	"github.com/savaki/swag/swagger"
@@ -133,8 +132,9 @@ func TestBody(t *testing.T) {
 		Description: "the description",
 		Required:    true,
 		Schema: &swagger.Schema{
-			Ref:       "#/definitions/endpoint_testModel",
-			Prototype: reflect.TypeOf(Model{}),
+			Type: &jsonschema.Type{
+				Ref: "#/definitions/endpoint_testModel",
+			},
 		},
 	}
 
@@ -150,8 +150,9 @@ func TestResponse(t *testing.T) {
 	expected := swagger.Response{
 		Description: "successful",
 		Schema: &swagger.Schema{
-			Ref:       "#/definitions/endpoint_testModel",
-			Prototype: reflect.TypeOf(Model{}),
+			Type: &jsonschema.Type{
+				Ref: "#/definitions/endpoint_testModel",
+			},
 		},
 	}
 
@@ -167,8 +168,9 @@ func TestResponseHeader(t *testing.T) {
 	expected := swagger.Response{
 		Description: "successful",
 		Schema: &swagger.Schema{
-			Ref:       "#/definitions/endpoint_testModel",
-			Prototype: reflect.TypeOf(Model{}),
+			Type: &jsonschema.Type{
+				Ref: "#/definitions/endpoint_testModel",
+			},
 		},
 		Headers: map[string]swagger.Header{
 			"X-Rate-Limit": {
