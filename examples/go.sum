@@ -6,5 +6,5 @@ github.com/julienschmidt/httprouter v1.2.0 h1:TDTW5Yz1mjftljbcKqRcrYhd4XeOoI98t+
 github.com/julienschmidt/httprouter v1.2.0/go.mod h1:SYymIcj16QtmaHHD7aYtjjsJG7VTCxuUUipMqKk8s4w=
 github.com/labstack/echo v3.2.1+incompatible h1:J2M7YArHx4gi8p/3fDw8tX19SXhBCoRpviyAZSN3I88=
 github.com/labstack/echo v3.2.1+incompatible/go.mod h1:0INS7j/VjnFxD4E2wkz67b8cVwCLbBmJyDaka6Cmk1s=
-github.com/savaki/swag v0.0.0-20170722173931-3a75479e44a3 h1:3HwjHeCQRWE1mHSKg0aeiK0dR+Us6V6l8Nyg2dS0XKc=
-github.com/savaki/swag v0.0.0-20170722173931-3a75479e44a3/go.mod h1:g/bXAMQQsEJp8WwNGRZiKPRYCeQiWexRTA7+dhDd7oQ=
+marwan.io/swag v0.0.0-20170722173931-3a75479e44a3 h1:3HwjHeCQRWE1mHSKg0aeiK0dR+Us6V6l8Nyg2dS0XKc=
+marwan.io/swag v0.0.0-20170722173931-3a75479e44a3/go.mod h1:g/bXAMQQsEJp8WwNGRZiKPRYCeQiWexRTA7+dhDd7oQ=

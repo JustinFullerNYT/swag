@@ -19,9 +19,9 @@ import (
 	"net/http"
 
 	"github.com/julienschmidt/httprouter"
-	"github.com/savaki/swag"
-	"github.com/savaki/swag/endpoint"
-	"github.com/savaki/swag/swagger"
+	"marwan.io/swag"
+	"marwan.io/swag/endpoint"
+	"marwan.io/swag/swagger"
 )
 
 func handle(w http.ResponseWriter, _ *http.Request, _ httprouter.Params) {

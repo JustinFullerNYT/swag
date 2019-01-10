@@ -17,7 +17,7 @@ package swagger
 import (
 	"encoding/json"
 
-	"github.com/alecthomas/jsonschema"
+	"marwan.io/jsonschema"
 )
 
 // Items represents items from the swagger doc

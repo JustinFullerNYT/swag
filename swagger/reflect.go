@@ -18,7 +18,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/alecthomas/jsonschema"
+	"marwan.io/jsonschema"
 )
 
 func inspect(t reflect.Type, jsonTag string) Property {

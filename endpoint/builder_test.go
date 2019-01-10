@@ -19,11 +19,11 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/alecthomas/jsonschema"
-	"github.com/savaki/swag"
-	"github.com/savaki/swag/endpoint"
-	"github.com/savaki/swag/swagger"
 	"github.com/stretchr/testify/assert"
+	"marwan.io/jsonschema"
+	"marwan.io/swag"
+	"marwan.io/swag/endpoint"
+	"marwan.io/swag/swagger"
 )
 
 func Echo(w http.ResponseWriter, _ *http.Request) {

@@ -24,7 +24,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/alecthomas/jsonschema"
+	"marwan.io/jsonschema"
 )
 
 // Object represents the object entity from the swagger definition
