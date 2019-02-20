@@ -215,6 +215,7 @@ func MakeSchema(t reflect.Type) *Schema {
 	js := jsonschema.ReflectFromType(t)
 
 	var s Schema
+	s.Prototype = t
 	s.Type = js.Type
 	s.Definitions = js.Definitions
 

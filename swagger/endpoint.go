@@ -16,6 +16,7 @@ package swagger
 
 import (
 	"encoding/json"
+	"reflect"
 
 	"marwan.io/jsonschema"
 )
@@ -31,6 +32,7 @@ type Items struct {
 type Schema struct {
 	*jsonschema.Type
 	Definitions jsonschema.Definitions `json:"-"`
+	Prototype   reflect.Type           `json:"-"`
 }
 
 // Header represents a response header
