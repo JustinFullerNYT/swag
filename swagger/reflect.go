@@ -212,6 +212,9 @@ func define(v interface{}) map[string]Object {
 
 // MakeSchema takes struct or pointer to a struct and returns a Schema instance suitable for use by the swagger doc
 func MakeSchema(t reflect.Type) *Schema {
+	if reflect.ValueOf(t).Kind() == reflect.Invalid {
+		return nil
+	}
 	js := jsonschema.ReflectFromType(t)
 
 	var s Schema
