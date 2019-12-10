@@ -104,7 +104,7 @@ func BasicSecurity() SecuritySchemeOption {
 // the location of the API key (query or header). "name" is the name of the
 // header or query parameter to be used.
 func APIKeySecurity(name, in string) SecuritySchemeOption {
-	if in != "header" && in != "query" {
+	if in != "header" && in != "query" && in != "cookie" {
 		panic(fmt.Errorf(`APIKeySecurity "in" parameter must be one of: "header" or "query"`))
 	}
 

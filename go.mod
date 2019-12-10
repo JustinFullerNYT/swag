@@ -6,3 +6,5 @@ require (
 	github.com/stretchr/testify v1.2.2
 	marwan.io/jsonschema v0.0.0-20190110193509-59e6d6ae198b
 )
+
+go 1.13
