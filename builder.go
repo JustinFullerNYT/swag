@@ -14,7 +14,7 @@
 //
 package swag
 
-import "marwan.io/swag/swagger"
+import "github.com/JustinFullerNYT/swag/swagger"
 
 // Builder uses the builder pattern to generate a swagger definition
 type Builder struct {

@@ -17,8 +17,8 @@ package swag_test
 import (
 	"testing"
 
-	"marwan.io/swag"
-	"marwan.io/swag/swagger"
+	"github.com/JustinFullerNYT/swag"
+	"github.com/JustinFullerNYT/swag/swagger"
 	"github.com/stretchr/testify/assert"
 )
 

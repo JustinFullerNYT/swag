@@ -1,6 +1,6 @@
 # swag
 
-[![GoDoc](https://godoc.org/marwan.io/swag?status.svg)](https://godoc.org/marwan.io/swag)
+[![GoDoc](https://godoc.org/github.com/JustinFullerNYT/swag?status.svg)](https://godoc.org/github.com/JustinFullerNYT/swag)
 [![Build Status](https://travis-ci.org/savaki/swag.svg?branch=master)](https://travis-ci.org/savaki/swag)
 
 ```swag``` is a lightweight library to generate swagger json for Go projects.  
@@ -13,7 +13,7 @@ No code generation, no framework constraints, just a simple swagger definition.
 ## Installation
 
 ```bash
-go get marwan.io/swag
+go get github.com/JustinFullerNYT/swag
 ```
 
 
@@ -48,7 +48,7 @@ allPets := endpoint.New("get", "/pet", "Return all the pets",
 ) 
 ```
 
-Refer to the [godoc](https://godoc.org/marwan.io/swag/endpoint) for a list of all the endpoint options
+Refer to the [godoc](https://godoc.org/github.com/JustinFullerNYT/swag/endpoint) for a list of all the endpoint options
 
 ### Walk
 
